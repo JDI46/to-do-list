@@ -3,30 +3,31 @@
 #class takes new task and adds to list
 
 
-class ToDoList:
+with open("python_projects/to_do_list/programdraft.txt", "r+") as todofile:
+  class ToDoList:
   
-  list = []
+    list = []
 
-  @classmethod
-  def add_task(cls):
-    while True:
-      add = input("New Task: ")
-      if add.lower() == 'stop':
+    @classmethod
+    def add_task(cls):
+      while True:
+        add = input("New Task: ")
+        if add.lower() == 'stop':
           break
-      cls.list.append(add)
+        cls.list.append(add)
       
 
-  @classmethod
-  def remove_task(cls):
-    remove_prompt = input("Delete: ")
-    if remove_prompt.isdigit():
-      cls.list.remove(remove_prompt)
+    @classmethod
+    def remove_task(cls):
+      remove_prompt = input("Delete: ")
+      if remove_prompt.isdigit():
+        cls.list.remove(remove_prompt)
 
 
-  @classmethod
-  def view_tasks(cls):
-    for i in cls.list:
-      print(i)
+    @classmethod
+    def view_tasks(cls):
+      for i in cls.list:
+        print(i)
 
 
 ToDoList.add_task()
