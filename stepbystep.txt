@@ -1,0 +1,59 @@
+MAP/FILter:
+
+In Python, `map()` and `filter()` are higher-order functions that allow you to apply a function to every item in an
+iterable (like a list or tuple) and create a new iterable with the results. Here's a step-by-step guide on how they
+work:
+
+**`map()`**
+
+`map()` applies a given function to each item in an iterable and returns a new iterable with the results.
+
+Step-by-step example:
+```python
+def square(x):
+    return x ** 2
+
+numbers = [1, 2, 3, 4, 5]
+
+# Map the `square` function to each number in `numbers`
+squared_numbers = map(square, numbers)
+
+print(list(squared_numbers))  # Output: [1, 4, 9, 16, 25]
+```
+Here's what happens:
+
+1. The `map()` function takes two arguments: a function (`square`) and an iterable (`numbers`).
+2. `map()` applies the `square` function to each item in `numbers`.
+3. The result of applying the function is added to a new iterable, which is returned by `map()`.
+4. We convert the resulting iterable back to a list using the `list()` function and print it.
+
+**`filter()`**
+
+`filter()` creates a new iterable with only those items from an original iterable that satisfy a given condition
+(i.e., pass a test).
+
+Step-by-step example:
+```python
+def is_even(x):
+    return x % 2 == 0
+
+numbers = [1, 2, 3, 4, 5]
+
+# Filter the `numbers` list to include only even numbers
+even_numbers = filter(is_even, numbers)
+
+print(list(even_numbers))  # Output: [2, 4]
+```
+Here's what happens:
+
+1. The `filter()` function takes two arguments: a function (`is_even`) and an iterable (`numbers`).
+2. `filter()` applies the `is_even` function to each item in `numbers`.
+3. If the result of applying the function is `True`, the item is added to a new iterable.
+4. We convert the resulting iterable back to a list using the `list()` function and print it.
+
+Note that both `map()` and `filter()` return iterators, not lists or other types of collections. You can use the
+`list()` function to convert them to a more traditional collection type if needed.
+
+Also, keep in mind that in Python 3.x, `map()` returns an iterator, while in Python 2.x, it returns a list. In Python
+3.x, you need to use the `list()` function to convert the result to a list, as shown in the examples above.
+
