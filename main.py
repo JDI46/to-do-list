@@ -3,7 +3,7 @@
 #class takes new task and adds to list
 
 
-with open("to_do_list/programdraft.txt", "r+") as todofile:
+with open("../programdraft.txt", "r+") as todofile:
 #   class ToDoList:
   
 #     list = []
